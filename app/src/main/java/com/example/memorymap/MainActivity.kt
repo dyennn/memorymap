@@ -1,6 +1,6 @@
 package com.example.memorymap
 
-import com.example.memorymap.ui.RegisterScreen
+import com.example.memorymap.ui.caregiver.RegisterScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

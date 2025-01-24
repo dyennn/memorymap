@@ -12,6 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.memorymap.R
 import com.example.memorymap.ui.components.ButtonComponent
+import com.example.memorymap.ui.components.ForgotPasswordButton
 import com.example.memorymap.ui.components.Heading1
 import com.example.memorymap.ui.components.PasswordFieldComponent
 import com.example.memorymap.ui.components.PositionedImage
@@ -33,6 +34,7 @@ fun LoginScreen() {
             PasswordFieldComponent(label = "Password")
             Spacer(modifier = Modifier.height(55.dp))
             ButtonComponent(onClick = {}, value = stringResource(id = R.string.login))
+            ForgotPasswordButton {  }
         }
     }
 }

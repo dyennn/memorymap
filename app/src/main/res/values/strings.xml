@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Memorymap</string>
+    <string name="back_button">Back</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="role">Role</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="hide_password">Hide Password</string>
+    <string name="show_password">Show Password</string>
+</resources>

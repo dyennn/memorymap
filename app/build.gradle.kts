@@ -55,7 +55,7 @@ dependencies {
     implementation(libs.androidx.espresso.core)
     implementation(libs.androidx.animation.core.lint)
     implementation(libs.androidx.foundation.android)
-    implementation ("androidx.compose.material:material-icons-extended:")
+    implementation (libs.androidx.material.icons.extended)
     implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -64,4 +64,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation (libs.androidx.navigation.compose.v272)
+    implementation(libs.material3)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.adapter.rxjava2)
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+
 }

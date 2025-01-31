@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MemoryMapTheme()
+            AuthNavigation()
 
         }
     }
@@ -27,12 +27,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MemoryMapTheme()
 {
-    MaterialTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.padding(start = 16.dp , end = 16.dp, bottom = 16.dp)) {
-            AuthNavigation()
-        }
-    }
+    AuthNavigation()
 }
 
 @Preview(showBackground = true)

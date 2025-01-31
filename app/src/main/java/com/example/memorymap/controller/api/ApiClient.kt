@@ -6,8 +6,10 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+//192.168.92.149 - Deaniel's Address
+//192.168.100.98 - Home Address
 object RetrofitClient {
-    private const val BASE_URL = "http://192.168.100.98/memorymap/api/auth/"
+    private const val BASE_URL = "http://192.168.92.149/memorymap/api/auth/"
 
     val retrofit : Retrofit by lazy {
         Retrofit.Builder()

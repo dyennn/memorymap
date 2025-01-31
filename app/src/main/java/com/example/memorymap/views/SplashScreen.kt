@@ -52,9 +52,9 @@ fun SplashScreen(onNavigateToLogin : () -> Unit)
                 horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                    painter = painterResource(id = R.drawable.oval_logo), // Replace with your logo
+                    painter = painterResource(id = R.drawable.circle_logo), // Replace with your logo
                     contentDescription = "Splash Logo",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(140.dp)
             )
         }
     }

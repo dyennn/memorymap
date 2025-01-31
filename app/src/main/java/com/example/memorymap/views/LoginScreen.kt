@@ -1,5 +1,6 @@
 package com.example.memorymap.views
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +17,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -33,7 +36,6 @@ fun LoginScreen(
         onNavigateToRegister : () -> Unit ,
         onNavigateToDashboard : () -> Unit ,
         onNavigateToForgotPassword : () -> Unit ,
-
         )
 {
     val viewModel : AuthViewModel = viewModel()
@@ -41,13 +43,18 @@ fun LoginScreen(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val loginState by viewModel.loginState
-
+    val focusManager = LocalFocusManager.current
     Column(
             modifier = Modifier
                     .fillMaxSize()
-                    .padding(start = 43.dp, top = 32.dp, end = 43.dp, bottom = 32.dp),
-            verticalArrangement = Arrangement.Top
+                    .padding(start = 43.dp, top = 32.dp, end = 43.dp, bottom = 32.dp)
+                    .clickable{
+                        focusManager.clearFocus()
+                    },
+            verticalArrangement = Arrangement.Top,
+
     ) {
+
         PositionedImage()
         Heading1(text = "Login")
         Spacer(modifier = Modifier.height(12.dp))
@@ -66,6 +73,7 @@ fun LoginScreen(
                 isError = loginState is Resource.Error ,
                 errorMessage = (loginState as? Resource.Error)?.message ?: ""
         )
+        TextButtonComponent(onClick = onNavigateToForgotPassword, text = "Forgot Password?")
         Spacer(modifier = Modifier.height(24.dp))
 
         ButtonComponent(
@@ -74,12 +82,12 @@ fun LoginScreen(
                 enabled = loginState !is Resource.Loading ,
                 text = "Log In"
         )
+        Spacer(modifier = Modifier.height(24.dp))
         Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-           ) {
-            TextButtonComponent(onClick = onNavigateToForgotPassword, text = "Forgot Password?")
-            TextButtonComponent(onClick = onNavigateToRegister, text = "Create an Account")
+                modifier = Modifier.fillMaxWidth() ,
+                horizontalArrangement = Arrangement.Center
+        ) {
+            TextButtonComponent(onClick = onNavigateToRegister , text = "Don't have an account? Sign Up")
         }
 
         when (loginState)

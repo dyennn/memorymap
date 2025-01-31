@@ -45,6 +45,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.memorymap.R
@@ -56,20 +57,25 @@ import com.example.memorymap.R
 @Composable
 fun PositionedImage() {
     Box(
-        Modifier
-            .fillMaxWidth()
-    ) {
+            Modifier
+                    .fillMaxWidth()
+                    .padding(35.dp)
+       ) {
         Image(
-            painter = painterResource(id = R.drawable.oval_logo),
-            contentDescription = "Centered Image",
-            modifier = Modifier
-                .size(150.59.dp)
-                .padding(bottom = 27.dp)
-                .align(Alignment.Center)
-        )
+                painter = painterResource(id = R.drawable.circle_logo),
+                contentDescription = "Centered Image",
+                modifier = Modifier
+                        .size(150.dp)
+                        .align(Alignment.Center)
+             )
     }
 }
 
+@Preview
+@Composable
+fun PositionedImagePreview() {
+    PositionedImage()
+}
 
 /**
  * Composable function to display a heading with padding.
@@ -145,6 +151,7 @@ fun TextFieldComponent(
         placeholder : String ,
         isError : Boolean ,
         errorMessage : String = "" ,
+
                       )
 {
 
@@ -161,7 +168,9 @@ fun TextFieldComponent(
                             clip = true ,
                             ambientColor = Color.Black.copy(alpha = 0.25f) ,
                             spotColor = Color.Black.copy(alpha = 0.25f)
+
                            ) ,
+
             placeholder = {
                 Text(
                         text = "Enter $placeholder..." ,
